@@ -8,13 +8,17 @@ import {
 } from "react-router-dom";
 import type { Job } from "./types/job";
 
+// layouts and pages
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import JobsPage from "./pages/JobsPage";
 import NotFound from "./pages/NotFound";
-import JobPage, { jobLoader } from "./pages/JobPage";
+import JobPage from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
+
+// loaders
+import { jobLoader } from "./loaders/jobLoader";
 
 const App: React.FC = () => {
   // add new job

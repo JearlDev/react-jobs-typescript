@@ -121,16 +121,4 @@ const JobPage: React.FC<JobPageProps> = ({ deleteJob }) => {
   );
 };
 
-interface LoaderParams {
-  params: {
-    id: string;
-  };
-}
-
-const jobLoader = async ({ params }: LoaderParams) => {
-  const res = await fetch(`/api/jobs/${params.id}`);
-  const data = await res.json();
-  return data;
-};
-
-export { JobPage as default, jobLoader };
+export default JobPage;
