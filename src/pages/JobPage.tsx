@@ -3,11 +3,11 @@ import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
 
-interface JobPageProps {
+type JobPageProps = {
   deleteJob: (id: string) => Promise<void>;
-}
+};
 
-const JobPage: React.FC<JobPageProps> = ({ deleteJob }) => {
+export default function JobPage({ deleteJob }: JobPageProps) {
   const { id } = useParams();
   const job = useLoaderData();
   const navigate = useNavigate();
@@ -119,6 +119,4 @@ const JobPage: React.FC<JobPageProps> = ({ deleteJob }) => {
       </section>
     </>
   );
-};
-
-export default JobPage;
+}

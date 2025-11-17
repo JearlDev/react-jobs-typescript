@@ -4,7 +4,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import NavBar from "../components/Navbar";
 
-const MainLayout: React.FC = () => {
+export default function MainLayout() {
   return (
     <>
       <NavBar />
@@ -12,6 +12,4 @@ const MainLayout: React.FC = () => {
       <ToastContainer />
     </>
   );
-};
-
-export default MainLayout;
+}

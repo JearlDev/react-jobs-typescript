@@ -4,7 +4,7 @@ import HomeCards from "../components/HomeCards";
 import JobListings from "../components/JobListings";
 import ViewAllJobs from "../components/ViewAllJobs";
 
-const HomePage: React.FC = () => {
+export default function HomePage() {
   return (
     <>
       <Hero />
@@ -13,6 +13,4 @@ const HomePage: React.FC = () => {
       <ViewAllJobs />
     </>
   );
-};
-
-export default HomePage;
+}

@@ -4,10 +4,11 @@ import JobListing from "./JobListing";
 import Spinner from "./Spinner";
 import type { Job } from "../types/job";
 
-const JobListings: React.FC<{ isHome?: boolean }> = ({ isHome = false }) => {
+export default function JobListings({ isHome = false }: { isHome?: boolean }) {
   const [jobs, setJobs] = useState<Job[]>([]);
   const [loading, setLoading] = useState<boolean>(true);
 
+  // TODO: Replace with loader data fetching (file created in loaders/jobsLoader.ts) (then replace loaders with SWR)
   useEffect(() => {
     const fetchJobs = async () => {
       const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
@@ -43,6 +44,4 @@ const JobListings: React.FC<{ isHome?: boolean }> = ({ isHome = false }) => {
       </div>
     </section>
   );
-};
-
-export default JobListings;
+}

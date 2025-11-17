@@ -2,11 +2,11 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import logo from "../assets/images/react.svg";
 
-interface NavLinkProps {
+type NavLinkProps = {
   isActive: boolean;
-}
+};
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   const linkClass = ({ isActive }: NavLinkProps): string =>
     isActive
       ? `text-white bg-black hover:bg-gray-900 hover:text-white rounded-md px-3 py-2`
@@ -42,6 +42,4 @@ const Navbar: React.FC = () => {
       </div>
     </nav>
   );
-};
-
-export default Navbar;
+}

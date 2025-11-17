@@ -1,12 +1,10 @@
 import React from "react";
 import JobListings from "../components/JobListings";
 
-const JobsPage: React.FC = () => {
+export default function JobsPage() {
   return (
     <section>
       <JobListings />
     </section>
   );
-};
-
-export default JobsPage;
+}

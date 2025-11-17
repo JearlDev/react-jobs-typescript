@@ -1,4 +1,4 @@
-export interface Job {
+export type Job = {
   id: string;
   title: string;
   type: string;
@@ -11,4 +11,4 @@ export interface Job {
     contactEmail: string;
     contactPhone?: string | undefined;
   };
-}
+};

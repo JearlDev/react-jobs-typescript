@@ -4,9 +4,11 @@ import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import type { Job } from "../types/job";
 
-const AddJobPage: React.FC<{
-  addJobSubmit: (job: Omit<Job, "id">) => Promise<void>;
-}> = ({ addJobSubmit }) => {
+export default function AddJobPage({
+  addJobSubmit,
+}: {
+  addJobSubmit: (newJob: Omit<Job, "id">) => void;
+}) {
   const [title, setTitle] = useState<string>("");
   const [type, setType] = useState<string>("Full-Time");
   const [description, setDescription] = useState<string>("");
@@ -245,6 +247,4 @@ const AddJobPage: React.FC<{
       </section>
     </>
   );
-};
-
-export default AddJobPage;
+}

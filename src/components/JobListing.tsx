@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { FaMapMarker } from "react-icons/fa";
 import type { Job } from "../types/job";
 
-const JobListing: React.FC<{ job: Job }> = ({ job }) => {
+export default function JobListing({ job }: { job: Job }) {
   const [showFullDescription, setShowFullDescription] =
     useState<boolean>(false);
 
@@ -48,6 +48,4 @@ const JobListing: React.FC<{ job: Job }> = ({ job }) => {
       </div>
     </div>
   );
-};
-
-export default JobListing;
+}

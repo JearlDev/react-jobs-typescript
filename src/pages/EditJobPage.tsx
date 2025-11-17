@@ -4,9 +4,11 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import type { Job } from "../types/job";
 
-const EditJobPage: React.FC<{
-  updateJobSubmit: (job: Job) => Promise<void>;
-}> = ({ updateJobSubmit }) => {
+export default function EditJobPage({
+  updateJobSubmit,
+}: {
+  updateJobSubmit: (updatedJob: Job) => void;
+}) {
   const job = useLoaderData() as Job;
 
   const [title, setTitle] = useState<string>(job.title);
@@ -251,6 +253,4 @@ const EditJobPage: React.FC<{
       </div>
     </section>
   );
-};
-
-export default EditJobPage;
+}

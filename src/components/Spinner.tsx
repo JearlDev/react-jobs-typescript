@@ -6,7 +6,7 @@ const override = {
   margin: "100px auto",
 };
 
-const Spinner: React.FC<{ loading: boolean }> = ({ loading }) => {
+export default function Spinner({ loading }: { loading: boolean }) {
   return (
     <ClipLoader
       color={"#4338ca"}
@@ -17,6 +17,4 @@ const Spinner: React.FC<{ loading: boolean }> = ({ loading }) => {
       data-testid="loader"
     />
   );
-};
-
-export default Spinner;
+}

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card";
 import { Link } from "react-router-dom";
 
-const HomeCards: React.FC = () => {
+export default function HomeCards() {
   return (
     <section className="py-4">
       <div className="container-xl lg:container m-auto">
@@ -35,6 +35,4 @@ const HomeCards: React.FC = () => {
       </div>
     </section>
   );
-};
-
-export default HomeCards;
+}

@@ -20,7 +20,7 @@ import EditJobPage from "./pages/EditJobPage";
 // loaders
 import { jobLoader } from "./loaders/jobLoader";
 
-const App: React.FC = () => {
+export default function App() {
   // add new job
   const addJob = async (newJob: Omit<Job, "id">): Promise<void> => {
     const res = await fetch("/api/jobs", {
@@ -78,6 +78,4 @@ const App: React.FC = () => {
   );
 
   return <RouterProvider router={router} />;
-};
-
-export default App;
+}

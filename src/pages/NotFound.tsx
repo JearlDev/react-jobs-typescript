@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { FaExclamationTriangle } from "react-icons/fa";
 
-const NotFound: React.FC = () => {
+export default function NotFound() {
   return (
     <section className="text-center flex flex-col justify-center items-center h-96">
       <FaExclamationTriangle className="text-yellow-400 text-6xl mb-4" />
@@ -16,6 +16,4 @@ const NotFound: React.FC = () => {
       </Link>
     </section>
   );
-};
-
-export default NotFound;
+}
