@@ -9,16 +9,16 @@ export default function AddJobPage({
 }: {
   addJobSubmit: (newJob: Omit<Job, "id">) => void;
 }) {
-  const [title, setTitle] = useState<string>("");
-  const [type, setType] = useState<string>("Full-Time");
-  const [description, setDescription] = useState<string>("");
-  const [salary, setSalary] = useState<string>("Under $50K");
-  const [location, setLocation] = useState<string>("");
-  const [companyName, setCompanyName] = useState<string>("");
+  const [title, setTitle] = useState("");
+  const [type, setType] = useState("Full-Time");
+  const [description, setDescription] = useState("");
+  const [salary, setSalary] = useState("Under $50K");
+  const [location, setLocation] = useState("");
+  const [companyName, setCompanyName] = useState("");
   const [companyDescription, setCompanyDescription] = useState<
     string | undefined
   >("");
-  const [contactEmail, setContactEmail] = useState<string>("");
+  const [contactEmail, setContactEmail] = useState("");
   const [contactPhone, setContactPhone] = useState<string | undefined>("");
 
   const navigate = useNavigate();

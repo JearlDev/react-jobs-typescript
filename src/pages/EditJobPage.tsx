@@ -11,18 +11,16 @@ export default function EditJobPage({
 }) {
   const job = useLoaderData() as Job;
 
-  const [title, setTitle] = useState<string>(job.title);
-  const [type, setType] = useState<string>(job.type);
-  const [description, setDescription] = useState<string>(job.description);
-  const [salary, setSalary] = useState<string>(job.salary);
-  const [location, setLocation] = useState<string>(job.location);
-  const [companyName, setCompanyName] = useState<string>(job.company.name);
+  const [title, setTitle] = useState(job.title);
+  const [type, setType] = useState(job.type);
+  const [description, setDescription] = useState(job.description);
+  const [salary, setSalary] = useState(job.salary);
+  const [location, setLocation] = useState(job.location);
+  const [companyName, setCompanyName] = useState(job.company.name);
   const [companyDescription, setCompanyDescription] = useState<
     string | undefined
   >(job.company.description);
-  const [contactEmail, setContactEmail] = useState<string>(
-    job.company.contactEmail
-  );
+  const [contactEmail, setContactEmail] = useState(job.company.contactEmail);
   const [contactPhone, setContactPhone] = useState<string | undefined>(
     job.company.contactPhone
   );
