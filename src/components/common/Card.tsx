@@ -1,5 +1,3 @@
-import React from "react";
-
 type CardProps = {
   children: React.ReactNode;
   bg?: string;

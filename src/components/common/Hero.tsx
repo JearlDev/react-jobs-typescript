@@ -1,5 +1,3 @@
-import React from "react";
-
 type HeroProps = {
   title?: string;
   subtitle?: string;

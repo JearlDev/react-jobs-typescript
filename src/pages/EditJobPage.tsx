@@ -1,6 +1,6 @@
 import React from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { useJob } from "../services/queries";
+import { useFetchJob } from "../services/queries";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import type { Job } from "../types/job";
@@ -12,7 +12,7 @@ export default function EditJobPage({
 }) {
   const { id } = useParams();
 
-  const { data } = useJob(id);
+  const { data } = useFetchJob(id);
   const job = data as Job;
 
   const [title, setTitle] = useState(job.title);

@@ -1,11 +1,11 @@
-import React from "react";
-import { useJobs } from "../services/queries";
+import { useFetchJobs } from "../../services/queries";
+
 import JobListing from "./JobListing";
-import Spinner from "./Spinner";
-import type { Job } from "../types/job";
+import Spinner from "../common/Spinner";
+import type { Job } from "../../types/job";
 
 export default function JobListings({ isHome = false }: { isHome?: boolean }) {
-  const { data, isLoading } = useJobs(isHome ? { limit: 3 } : undefined);
+  const { data, isLoading } = useFetchJobs(isHome ? { limit: 3 } : undefined);
 
   return (
     <section className="bg-blue-50 px-4 py-10">

@@ -1,6 +1,5 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
-import logo from "../assets/images/react.svg";
+import logo from "../../assets/images/react.svg";
 
 type NavLinkProps = {
   isActive: boolean;

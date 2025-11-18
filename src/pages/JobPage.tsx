@@ -1,9 +1,8 @@
-import React from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 import { FaArrowLeft, FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { useJob } from "../services/queries";
-import Spinner from "../components/Spinner";
+import { useFetchJob } from "../services/queries";
+import Spinner from "../components/common/Spinner";
 
 type JobPageProps = {
   deleteJob: (id: string) => Promise<void>;
@@ -12,7 +11,7 @@ type JobPageProps = {
 export default function JobPage({ deleteJob }: JobPageProps) {
   const { id } = useParams();
 
-  const { data, isLoading } = useJob(id);
+  const { data, isLoading } = useFetchJob(id);
   const job = data;
 
   const navigate = useNavigate();

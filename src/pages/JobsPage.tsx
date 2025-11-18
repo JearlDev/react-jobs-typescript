@@ -1,5 +1,4 @@
-import React from "react";
-import JobListings from "../components/JobListings";
+import JobListings from "../components/jobs/JobListings";
 
 export default function JobsPage() {
   return (
