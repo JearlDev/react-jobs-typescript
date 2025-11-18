@@ -1,3 +1,5 @@
+//TODO: remove | only here for reference during migration to SWR
+
 import type { LoaderFunction } from "react-router-dom";
 import type { Job } from "../types/job";
 

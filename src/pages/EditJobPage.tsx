@@ -1,5 +1,6 @@
 import React from "react";
-import { useParams, useLoaderData, Link, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useJob } from "../services/queries";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import type { Job } from "../types/job";
@@ -9,7 +10,10 @@ export default function EditJobPage({
 }: {
   updateJobSubmit: (updatedJob: Job) => void;
 }) {
-  const job = useLoaderData() as Job;
+  const { id } = useParams();
+
+  const { data } = useJob(id);
+  const job = data as Job;
 
   const [title, setTitle] = useState(job.title);
   const [type, setType] = useState(job.type);
@@ -26,7 +30,6 @@ export default function EditJobPage({
   );
 
   const navigate = useNavigate();
-  const { id } = useParams();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();

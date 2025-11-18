@@ -4,8 +4,8 @@ import {
   createBrowserRouter,
   createRoutesFromElements,
   RouterProvider,
-  Router,
 } from "react-router-dom";
+import { axiosInstance } from "./services/fetcher";
 import type { Job } from "./types/job";
 
 // layouts and pages
@@ -17,43 +17,21 @@ import JobPage from "./pages/JobPage";
 import AddJobPage from "./pages/AddJobPage";
 import EditJobPage from "./pages/EditJobPage";
 
-// loaders
-import { jobLoader } from "./loaders/jobLoader";
-
 export default function App() {
   // add new job
   const addJob = async (newJob: Omit<Job, "id">): Promise<void> => {
-    const res = await fetch("/api/jobs", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(newJob),
-    });
-
-    return;
+    //TODO: implement proper mutation handling with SWR (needed if addJob form and job listings are on same page)
+    await axiosInstance.post("/jobs", newJob);
   };
 
   // delete job
   const deleteJob = async (id: string): Promise<void> => {
-    const res = await fetch(`/api/jobs/${id}`, {
-      method: "DELETE",
-    });
-
-    return;
+    await axiosInstance.delete(`/jobs/${id}`);
   };
 
   // update job
   const updateJob = async (updatedJob: Job) => {
-    const res = await fetch(`/api/jobs/${updatedJob.id}`, {
-      method: "PUT",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(updatedJob),
-    });
-
-    return;
+    await axiosInstance.put(`/jobs/${updatedJob.id}`, updatedJob);
   };
 
   const router = createBrowserRouter(
@@ -62,15 +40,10 @@ export default function App() {
         <Route index element={<HomePage />} />
         <Route path="/jobs" element={<JobsPage />} />
         <Route path="/add-job" element={<AddJobPage addJobSubmit={addJob} />} />
-        <Route
-          path="/jobs/:id"
-          element={<JobPage deleteJob={deleteJob} />}
-          loader={jobLoader}
-        />
+        <Route path="/jobs/:id" element={<JobPage deleteJob={deleteJob} />} />
         <Route
           path="/edit-job/:id"
           element={<EditJobPage updateJobSubmit={updateJob} />}
-          loader={jobLoader}
         />
         <Route path="*" element={<NotFound />} />
       </Route>

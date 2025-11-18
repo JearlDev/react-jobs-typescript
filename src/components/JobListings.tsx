@@ -1,30 +1,12 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useJobs } from "../services/queries";
 import JobListing from "./JobListing";
 import Spinner from "./Spinner";
 import type { Job } from "../types/job";
 
 export default function JobListings({ isHome = false }: { isHome?: boolean }) {
-  const [jobs, setJobs] = useState<Job[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const { data, isLoading } = useJobs(isHome ? { limit: 3 } : undefined);
 
-  // TODO: Replace with loader data fetching (file created in loaders/jobsLoader.ts) (then replace loaders with SWR)
-  useEffect(() => {
-    const fetchJobs = async () => {
-      const apiUrl = isHome ? "/api/jobs?_limit=3" : "/api/jobs";
-      try {
-        const res = await fetch(apiUrl);
-        const data = await res.json();
-        setJobs(data);
-      } catch (error) {
-        console.log("Error fetching jobs:", error);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    fetchJobs();
-  }, [isHome]);
   return (
     <section className="bg-blue-50 px-4 py-10">
       <div className="container-xl lg:container m-auto">
@@ -32,11 +14,11 @@ export default function JobListings({ isHome = false }: { isHome?: boolean }) {
           {isHome ? "Latest Job Listings" : "All Job Listings"}
         </h2>
 
-        {loading ? (
-          <Spinner loading={loading} />
-        ) : (
+        {isLoading && <Spinner loading={isLoading} />}
+
+        {!isLoading && (
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {jobs.map((job: Job) => (
+            {data?.map((job: Job) => (
               <JobListing key={job.id} job={job} />
             ))}
           </div>
