@@ -2,7 +2,7 @@
   "jobs": [
     {
       "id": "2",
-      "title": "Front-End Engineerr",
+      "title": "Front-End Engineer",
       "type": "Full-Time",
       "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
       "salary": "$70K - $80K",
@@ -25,7 +25,7 @@
         "name": "Dolor Cloud",
         "description": "",
         "contactEmail": "contact@dolorsitamet.com",
-        "contactPhone": ""
+        "contactPhone": "asdasdds"
       }
     },
     {
@@ -47,13 +47,55 @@
       "title": "Full Stack React Developer",
       "type": "Full-Time",
       "description": "Exciting opportunity for a Full-Time Front-End Developer in bustling Atlanta, GA. We are seeking a talented individual with a passion for building elegant and scalable web applications. Join our team and make an impact!",
-      "location": "Atlanta, GA",
       "salary": "$90K - $100K",
+      "location": "Atlanta, GA",
       "company": {
         "name": "Browning Technologies",
         "description": "Browning Technologies is a rapidly growing technology company specializing in e-commerce solutions. We offer a dynamic and collaborative work environment where employees are encouraged to think creatively and innovate.",
         "contactEmail": "contact@consecteturadipisicing.com",
         "contactPhone": "555-555-5555"
+      }
+    },
+    {
+      "id": "34c8",
+      "title": "Product Metrics Engineer",
+      "type": "Internship",
+      "description": "A modi sed nostrum qui amet incidunt placeat ut.",
+      "salary": "Over $200K",
+      "location": "Wolff and Sons",
+      "company": {
+        "name": "McGlynn, Cole and Jast",
+        "description": "Corkery - Abbott",
+        "contactEmail": "your.email+fakedata45826@gmail.com",
+        "contactPhone": "334-350-6507"
+      }
+    },
+    {
+      "id": "ae4b",
+      "title": "Direct Branding Producer",
+      "type": "Remote",
+      "description": "Sunt sequi quidem doloremque officiis voluptates id harum.",
+      "salary": "$60K - 70K",
+      "location": "Weber and Sons",
+      "company": {
+        "name": "Vandervort Group",
+        "description": "Corwin - Botsford",
+        "contactEmail": "your.email+fakedata83991@gmail.com",
+        "contactPhone": "554-557-4681"
+      }
+    },
+    {
+      "id": "7cf7",
+      "title": "Lead Usability Specialist",
+      "type": "Part-Time",
+      "description": "Necessitatibus expedita iusto.",
+      "salary": "$125K - 150K",
+      "location": "Bauch, McDermott and Torphy",
+      "company": {
+        "name": "Fadel - Lind",
+        "description": "Lowe, McGlynn and Purdy",
+        "contactEmail": "your.email+fakedata91857@gmail.com",
+        "contactPhone": "133-666-0960"
       }
     }
   ]

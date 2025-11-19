@@ -1,4 +1,4 @@
-import { useFetchJobs } from "../../services/queries";
+import { useFetchJobs } from "../../hooks/data/useJobs";
 
 import JobListing from "./JobListing";
 import Spinner from "../common/Spinner";
