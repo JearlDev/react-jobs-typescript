@@ -1,34 +1,6 @@
 {
   "jobs": [
     {
-      "id": "2",
-      "title": "Front-End Engineer",
-      "type": "Full-Time",
-      "description": "Join our team as a Front-End Developer in sunny Miami, FL. We are looking for a motivated individual with a passion for crafting beautiful and responsive web applications. Experience with UI/UX design principles and a strong attention to detail are highly desirable.",
-      "salary": "$70K - $80K",
-      "location": "Miami, FL",
-      "company": {
-        "name": "Veneer Solution",
-        "description": "Veneer Solutions is a creative agency specializing in digital design and development. Our team is dedicated to pushing the boundaries of creativity and innovation to deliver exceptional results for our clients.",
-        "contactEmail": "contact@loremipsum.com",
-        "contactPhone": "555-555-5555"
-      }
-    },
-    {
-      "id": "3",
-      "title": "React.js Developer",
-      "type": "Part-Time",
-      "description": "Are you passionate about front-end development? Join our team in vibrant Brooklyn, NY, and work on exciting projects that make a difference. We offer competitive compensation and a collaborative work environment where your ideas are valued.",
-      "salary": "$70K - $80K",
-      "location": "Brooklyn, NY",
-      "company": {
-        "name": "Dolor Cloud",
-        "description": "",
-        "contactEmail": "contact@dolorsitamet.com",
-        "contactPhone": "asdasdds"
-      }
-    },
-    {
       "id": "4",
       "title": "React Front-End Dev",
       "type": "Part-Time",
@@ -82,20 +54,6 @@
         "description": "Corwin - Botsford",
         "contactEmail": "your.email+fakedata83991@gmail.com",
         "contactPhone": "554-557-4681"
-      }
-    },
-    {
-      "id": "7cf7",
-      "title": "Lead Usability Specialist",
-      "type": "Part-Time",
-      "description": "Necessitatibus expedita iusto.",
-      "salary": "$125K - 150K",
-      "location": "Bauch, McDermott and Torphy",
-      "company": {
-        "name": "Fadel - Lind",
-        "description": "Lowe, McGlynn and Purdy",
-        "contactEmail": "your.email+fakedata91857@gmail.com",
-        "contactPhone": "133-666-0960"
       }
     }
   ]

@@ -1,5 +1,5 @@
 import useSWR from "swr";
-import { axiosInstance } from "../../services/fetcher";
+import { axiosInstance } from "../../../../services/fetcher";
 import type { Job } from "../../types/job";
 
 // Fetch all jobs

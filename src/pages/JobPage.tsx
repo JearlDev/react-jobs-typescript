@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
-import JobDetails from "../components/jobs/JobDetails";
+import JobDetails from "../features/jobs/components/JobDetails";
 
 export default function JobPage() {
   return (

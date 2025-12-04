@@ -1,4 +1,4 @@
-import JobListings from "../components/jobs/JobListings";
+import JobListings from "../features/jobs/components/JobListings";
 
 export default function JobsPage() {
   return (

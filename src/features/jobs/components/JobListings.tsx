@@ -1,8 +1,8 @@
-import { useFetchJobs } from "../../hooks/data/useJobs";
+import { useFetchJobs } from "../hooks/data/useJobs";
 
 import JobListing from "./JobListing";
-import Spinner from "../common/Spinner";
-import type { Job } from "../../types/job";
+import Spinner from "../../../components/common/Spinner";
+import type { Job } from "../types/job";
 
 export default function JobListings({ isHome = false }: { isHome?: boolean }) {
   const { data, isLoading } = useFetchJobs(isHome ? { limit: 3 } : undefined);

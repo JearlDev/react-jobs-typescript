@@ -1,10 +1,10 @@
 import { useParams, Link, useNavigate } from "react-router-dom";
-import { useFetchJob } from "../../hooks/data/useJobs";
-import Spinner from "../../components/common/Spinner";
+import { useFetchJob } from "../hooks/data/useJobs";
+import Spinner from "../../../components/common/Spinner";
 import { FaMapMarker } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { useDeleteJob } from "../../hooks/data/useJobs";
-import type { Job } from "../../types/job";
+import { useDeleteJob } from "../hooks/data/useJobs";
+import type { Job } from "../types/job";
 
 export default function JobDetails() {
   const { id } = useParams();

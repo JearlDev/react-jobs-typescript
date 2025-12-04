@@ -1,9 +1,15 @@
-import { useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
+import { useFetchJob, useUpdateJob } from "../hooks/data/useJobs";
+import { useJobForm } from "../hooks/form/useJobForm";
 import { toast } from "react-toastify";
-import { useAddJob } from "../../hooks/data/useJobs";
-import { useJobForm } from "../../hooks/form/useJobForm";
+import type { Job } from "../types/job";
 
-export default function AddJobForm() {
+export default function EditJobForm() {
+  const { id } = useParams();
+
+  const { data } = useFetchJob(id);
+  const job = data as Job;
+
   const {
     title,
     setTitle,
@@ -23,15 +29,18 @@ export default function AddJobForm() {
     setContactEmail,
     contactPhone,
     setContactPhone,
-  } = useJobForm();
+  } = useJobForm(job);
 
   const navigate = useNavigate();
-  const addJob = useAddJob();
+  const updateJob = useUpdateJob();
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const newJob = {
+    if (!id) return;
+
+    const updatedJob: Job = {
+      id,
       title,
       type,
       description,
@@ -46,18 +55,18 @@ export default function AddJobForm() {
     };
 
     try {
-      await addJob(newJob);
-      toast.success("Job added successfully");
-      navigate("/jobs");
+      await updateJob(updatedJob);
+      toast.success("Job updated successfully");
+      navigate(`/jobs/${id}`);
     } catch (error) {
       toast.error(
-        "Failed to add job:" + (error instanceof Error ? error.message : "")
+        "Failed to update job:" + (error instanceof Error ? error.message : "")
       );
     }
   };
   return (
     <form onSubmit={handleSubmit}>
-      <h2 className="text-3xl text-center font-semibold mb-6">Add Job</h2>
+      <h2 className="text-3xl text-center font-semibold mb-6">Edit Job</h2>
 
       <div className="mb-4">
         <label htmlFor="type" className="block text-gray-700 font-bold mb-2">
@@ -107,7 +116,6 @@ export default function AddJobForm() {
           rows={4}
           placeholder="Add any job duties, expectations, requirements, etc"
           value={description}
-          required
           onChange={(e) => setDescription(e.target.value)}
         ></textarea>
       </div>
@@ -165,7 +173,6 @@ export default function AddJobForm() {
           className="border rounded w-full py-2 px-3"
           placeholder="Company Name"
           value={companyName}
-          required
           onChange={(e) => setCompanyName(e.target.value)}
         />
       </div>
@@ -229,7 +236,7 @@ export default function AddJobForm() {
           className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-full w-full focus:outline-none focus:shadow-outline"
           type="submit"
         >
-          Add Job
+          Update Job
         </button>
       </div>
     </form>

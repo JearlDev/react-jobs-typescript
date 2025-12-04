@@ -1,4 +1,4 @@
-import EditJobForm from "../components/jobs/EditJobForm";
+import EditJobForm from "../features/jobs/components/EditJobForm";
 
 export default function EditJobPage() {
   return (
